@@ -6,6 +6,8 @@ Protótipo de painel web para gestão de academias e equipes de artes marciais.
 
 [Abrir FAIXAFLOW no GitHub Pages](https://gabrielaffonsocunha.github.io/faixaflow/)
 
+![Captura do painel FAIXAFLOW](faixaflow-demo.jpg)
+
 ## Executar localmente
 
 Abra `index.html` em um navegador. Não há etapa de build nem dependências externas.
