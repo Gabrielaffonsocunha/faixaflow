@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111210">
+  <meta name="description" content="FAIXAFLOW — painel de gestão para academias e equipes de artes marciais.">
+  <title>FAIXAFLOW | Painel de gestão</title>
+  <link rel="icon" href="faixaflow-mark.jpeg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#inicio" aria-label="FAIXAFLOW início">
+        <span class="brand-mark"><img src="faixaflow-mark.jpeg" alt=""></span>
+        <span class="brand-copy"><strong>FAIXA<span>FLOW</span></strong><small>GESTÃO DE ACADEMIAS</small></span>
+      </a>
+      <div class="workspace-label">ESPAÇO DE TRABALHO</div>
+      <button class="academy-switch" id="academySwitch" aria-label="Selecionar unidade">
+        <span class="academy-icon">FF</span><span class="academy-name"><b>FaixaFlow Team</b><small>Unidade Centro</small></span><span class="chevron">⌄</span>
+      </button>
+      <div class="nav-label">MENU PRINCIPAL</div>
+      <nav class="main-nav" aria-label="Menu principal">
+        <button class="nav-item active" data-page="overview"><span class="nav-icon">◫</span>Visão geral</button>
+        <button class="nav-item" data-page="students" data-manager-only="true"><span class="nav-icon">♙</span>Alunos <span class="nav-count">184</span></button>
+        <button class="nav-item" data-page="classes"><span class="nav-icon">▦</span>Turmas e horários</button>
+        <button class="nav-item" data-page="attendance"><span class="nav-icon">◷</span>Frequência</button>
+        <button class="nav-item" data-page="belts"><span class="nav-icon">▰</span>Graduações</button>
+        <button class="nav-item" data-page="finance" data-manager-only="true"><span class="nav-icon">＄</span>Financeiro</button>
+        <button class="nav-item" data-page="team" data-manager-only="true"><span class="nav-icon">♧</span>Equipe</button>
+      </nav>
+      <div class="nav-label nav-label-spaced">GESTÃO</div>
+      <nav class="main-nav" aria-label="Gestão">
+        <button class="nav-item" data-page="reports" data-manager-only="true"><span class="nav-icon">▤</span>Relatórios</button>
+        <button class="nav-item" data-page="settings" data-manager-only="true"><span class="nav-icon">⚙</span>Configurações</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><span class="help-orb">✦</span><b>Seu tatame, em ordem.</b><p>Organize a rotina e acompanhe a evolução da equipe em um só lugar.</p><button id="helpBtn">Conhecer o FAIXAFLOW <span>→</span></button></div>
+        <div class="profile-row"><span class="avatar avatar-user">GC</span><span class="profile-copy"><b>Gabriel Cunha</b><small>Gestor principal</small></span><button class="dots" aria-label="Opções da conta">···</button></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-left"><button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">☰</button><div class="crumb">FAIXAFLOW <span>/</span> <b id="crumbPage">Visão geral</b></div></div>
+        <div class="topbar-actions"><label class="role-preview">PRÉVIA DE PERFIL<select id="roleMode" aria-label="Prévia de perfil"><option value="manager">Gestor</option><option value="teacher">Professor</option></select></label><span class="demo-badge"><i></i> AMBIENTE DE DEMONSTRAÇÃO</span><button class="icon-button search-toggle" id="searchToggle" aria-label="Buscar">⌕</button><button class="icon-button notification" id="notificationBtn" aria-label="Notificações">♧<i></i></button><span class="top-divider"></span><button class="top-profile"><span class="avatar avatar-user">GC</span><span><b id="currentName">Gabriel</b><small id="currentRole">Gestor</small></span><span class="chevron">⌄</span></button></div>
+      </header>
+      <div class="content-wrap">
+        <div class="page-heading"><div><div class="eyebrow" id="dateLabel">QUARTA-FEIRA, 14 DE OUTUBRO DE 2026</div><h1 id="pageTitle">Visão geral<span class="heading-period">.</span></h1><p id="pageSubtitle">Acompanhe o que acontece na sua academia hoje.</p></div><div class="heading-actions"><button class="button button-light" id="exportBtn"><span>↓</span> Exportar</button><button class="button button-primary" id="addButton"><span>＋</span> <span id="addButtonText">Novo aluno</span></button></div></div>
+
+        <section class="overview-page page-view" id="page-overview">
+          <div class="welcome-strip"><div class="welcome-icon">✦</div><div><b>Bom dia, Gabriel <span>👋</span></b><p>Quarta-feira de treino. Veja os principais números da sua equipe.</p></div><button class="strip-link" data-target="reports">Ver resumo do mês <span>→</span></button></div>
+          <div class="metric-grid">
+            <article class="metric-card"><div class="metric-top"><span>Alunos ativos</span><span class="metric-icon violet">♙</span></div><div class="metric-value">184</div><div class="metric-foot"><span class="trend-up">↗ 8,2%</span><span>vs. mês passado</span><span class="metric-link" data-target="students">Ver alunos →</span></div><div class="sparkline spark-violet"><i style="height:38%"></i><i style="height:53%"></i><i style="height:44%"></i><i style="height:67%"></i><i style="height:52%"></i><i style="height:76%"></i><i style="height:68%"></i><i style="height:94%"></i></div></article>
+            <article class="metric-card"><div class="metric-top"><span>Presenças hoje</span><span class="metric-icon lime">◷</span></div><div class="metric-value">32<span class="metric-sub"> / 39</span></div><div class="metric-foot"><span class="trend-up">82%</span><span>da presença prevista</span><span class="metric-link" data-target="attendance">Ver frequência →</span></div><div class="progress-track"><span style="width:82%"></span></div></article>
+            <article class="metric-card"><div class="metric-top"><span>Graduações próximas</span><span class="metric-icon orange">▰</span></div><div class="metric-value">14</div><div class="metric-foot"><span class="metric-neutral">Por modalidade · próximos 30 dias</span></div><div class="modality-breakdown"><span>Jiu-Jitsu <b>9</b></span><span>Muay Thai <b>4</b></span><span>Luta Livre <b>1</b></span><button class="metric-link" data-target="belts">Ver alunos →</button></div></article>
+            <article class="metric-card finance-metric" data-manager-only="true"><div class="metric-top"><span>Financeiro do mês</span><span class="metric-icon green">＄</span></div><div class="finance-breakdown"><div><span>Recebido</span><b>R$ 18.420</b></div><div><span>A receber</span><b>R$ 4.860</b></div><div class="overdue-total"><span>Atrasado <small>7 mensalidades</small></span><b>R$ 1.323</b></div></div><button class="overdue-link" data-target="finance">Cobrar mensalidades <span>→</span></button></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel attendance-panel"><div class="panel-heading"><div><h2>Frequência dos alunos</h2><p>Presenças registradas ao longo da semana</p></div><select class="select-compact" id="attendancePeriod" aria-label="Período do gráfico"><option>Esta semana</option><option>Este mês</option></select></div><div class="chart-summary"><b>278 <span>presenças</span></b><span class="trend-up">↗ 12,6% <small>vs. semana anterior</small></span></div><div class="chart-area"><div class="chart-y"><span>80</span><span>60</span><span>40</span><span>20</span><span>0</span></div><div class="chart-inner"><div class="chart-grid-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="bar-chart"><div class="bar-group"><i class="bar prev" style="height:46%"></i><i class="bar current" style="height:60%"></i><span>Seg</span></div><div class="bar-group"><i class="bar prev" style="height:58%"></i><i class="bar current" style="height:72%"></i><span>Ter</span></div><div class="bar-group"><i class="bar prev" style="height:41%"></i><i class="bar current" style="height:66%"></i><span>Qua</span></div><div class="bar-group"><i class="bar prev" style="height:67%"></i><i class="bar current" style="height:84%"></i><span>Qui</span></div><div class="bar-group"><i class="bar prev" style="height:53%"></i><i class="bar current" style="height:77%"></i><span>Sex</span></div><div class="bar-group"><i class="bar prev" style="height:76%"></i><i class="bar current" style="height:92%"></i><span>Sáb</span></div><div class="bar-group"><i class="bar prev" style="height:28%"></i><i class="bar current" style="height:40%"></i><span>Dom</span></div></div></div></div><div class="chart-legend"><span><i class="legend-dot current-dot"></i>Esta semana</span><span><i class="legend-dot prev-dot"></i>Semana anterior</span></div></section>
+
+            <section class="panel classes-panel"><div class="panel-heading"><div><h2>Aulas de hoje</h2><p>4 aulas programadas</p></div><button class="text-action" data-target="classes">Ver agenda <span>→</span></button></div><div class="class-list"><article class="class-item"><div class="class-time"><b>18:00</b><small>60 min</small></div><div class="class-color color-blue"></div><div class="class-info"><b>Jiu-Jitsu · Avançado</b><small>Prof. Matheus Lima · Tatame 1</small><div class="class-meta"><span>● 14 confirmados</span><span>18 vagas</span></div></div><button class="class-more" aria-label="Detalhes da aula">···</button></article><article class="class-item"><div class="class-time"><b>19:15</b><small>60 min</small></div><div class="class-color color-red"></div><div class="class-info"><b>Muay Thai · Todos os níveis</b><small>Prof. Ana Beatriz · Tatame 2</small><div class="class-meta"><span>● 11 confirmados</span><span>16 vagas</span></div></div><button class="class-more" aria-label="Detalhes da aula">···</button></article><article class="class-item"><div class="class-time"><b>20:30</b><small>45 min</small></div><div class="class-color color-green"></div><div class="class-info"><b>No-Gi · Intermediário</b><small>Prof. Matheus Lima · Tatame 1</small><div class="class-meta"><span>● 7 confirmados</span><span>16 vagas</span></div></div><button class="class-more" aria-label="Detalhes da aula">···</button></article></div><button class="schedule-button" data-target="classes">Abrir agenda completa <span>→</span></button></section>
+
+            <section class="panel churn-panel"><div class="panel-heading"><div><h2>Alunos para acompanhar</h2><p>10 ou mais dias sem treinar · alerta de evasão</p></div><button class="text-action" data-target="students">Ver alunos <span>→</span></button></div><div id="churnList" class="absence-list"></div></section>
+
+            <section class="panel students-panel"><div class="panel-heading"><div><h2>Alunos em destaque</h2><p>Acompanhe frequência e evolução</p></div><button class="text-action" data-target="students">Ver todos <span>→</span></button></div><div class="table-wrap"><table><thead><tr><th>ALUNO</th><th>GRADUAÇÃO</th><th>FREQUÊNCIA</th><th>STATUS</th></tr></thead><tbody id="featuredStudents"><tr><td><span class="student-cell"><span class="avatar avatar-purple">LM</span><span><b>Lucas Martins</b><small>Aluno desde mar. 2024</small></span></span></td><td><span class="belt-label"><i class="belt-chip blue"></i>Azul</span></td><td><span class="attendance-number">18 <small>/ 20 treinos</small></span><span class="mini-progress"><i style="width:90%"></i></span></td><td><span class="status-pill status-good">Em dia</span></td></tr><tr><td><span class="student-cell"><span class="avatar avatar-orange">AR</span><span><b>Ana Ribeiro</b><small>Aluna desde jun. 2023</small></span></span></td><td><span class="belt-label"><i class="belt-chip purple"></i>Roxa</span></td><td><span class="attendance-number">16 <small>/ 20 treinos</small></span><span class="mini-progress"><i style="width:80%"></i></span></td><td><span class="status-pill status-good">Em dia</span></td></tr><tr><td><span class="student-cell"><span class="avatar avatar-teal">PC</span><span><b>Pedro Costa</b><small>Aluno desde jan. 2025</small></span></span></td><td><span class="belt-label"><i class="belt-chip white"></i>Branca</span></td><td><span class="attendance-number">8 <small>/ 20 treinos</small></span><span class="mini-progress"><i class="warning-bar" style="width:40%"></i></span></td><td><span class="status-pill status-watch">Acompanhar</span></td></tr><tr><td><span class="student-cell"><span class="avatar avatar-pink">MS</span><span><b>Marina Souza</b><small>Aluna desde ago. 2022</small></span></span></td><td><span class="belt-label"><i class="belt-chip brown"></i>Marrom</span></td><td><span class="attendance-number">19 <small>/ 20 treinos</small></span><span class="mini-progress"><i style="width:95%"></i></span></td><td><span class="status-pill status-good">Em dia</span></td></tr></tbody></table></div></section>
+
+            <section class="panel activity-panel"><div class="panel-heading"><div><h2>Atividade recente</h2><p>Atualizações da equipe</p></div><button class="text-action" id="activityAll">Ver tudo <span>→</span></button></div><div class="activity-list"><div class="activity-item"><span class="activity-symbol activity-check">✓</span><span><b>Presença registrada</b><small>Lucas Martins · Jiu-Jitsu Avançado</small></span><time>há 12 min</time></div><div class="activity-item"><span class="activity-symbol activity-user">＋</span><span><b>Novo aluno cadastrado</b><small>Camila Fernandes · Muay Thai</small></span><time>há 38 min</time></div><div class="activity-item"><span class="activity-symbol activity-belt">▰</span><span><b>Graduação atualizada</b><small>Rafael Nunes · Faixa azul, 2º grau</small></span><time>há 1 h</time></div><div class="activity-item"><span class="activity-symbol activity-money">＄</span><span><b>Mensalidade recebida</b><small>Marina Souza · Plano ilimitado</small></span><time>há 2 h</time></div></div></section>
+          </div>
+          <footer class="page-footer"><span>FAIXAFLOW <b>·</b> Gestão que acompanha cada faixa.</span><span>Protótipo visual · Dados ilustrativos</span></footer>
+        </section>
+        <section class="generic-page page-view hidden" id="page-generic"></section>
+      </div>
+    </main>
+  </div>
+  <div class="overlay hidden" id="overlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Fechar">×</button><div class="modal-icon">＋</div><h2 id="modalTitle">Novo aluno</h2><p id="modalDesc">Adicione uma pessoa ao cadastro de demonstração.</p><form id="studentForm"><label>Nome completo<input name="name" placeholder="Ex.: Rafael Oliveira" required></label><div class="form-row"><label>Modalidade<select name="modality" id="modalitySelect"><option>Jiu-Jitsu</option><option>Muay Thai</option><option>Luta Livre</option><option>Kickboxing</option><option>Judô</option></select></label><label><span id="rankFieldLabel">Graduação · faixa</span><input name="rank" id="rankSelect" placeholder="Ex.: azul, intermediário, nível 2" required></label></div><label>E-mail<input name="email" type="email" placeholder="aluno@email.com"></label><div class="modal-actions"><button type="button" class="button button-light" id="cancelModal">Cancelar</button><button class="button button-primary" type="submit">Adicionar aluno</button></div><small class="form-note">Este protótipo não salva dados em um servidor.</small></form></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
